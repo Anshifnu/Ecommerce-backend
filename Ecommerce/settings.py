@@ -22,12 +22,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-jyv$snou$5d%og64&e%%xan84%#5_cm#-=pur*w3%3!%twef%!'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "3.94.200.165",
+    "scentifyy.store",
+    "www.scentifyy.store",
+    "scentifyy.vercel.app",
+]
+
 
 
 # Application definition
@@ -193,5 +199,15 @@ CSRF_TRUSTED_ORIGINS = [
     "https://scentifyy.vercel.app",
 ]
 
+
+CORS_ALLOWED_ORIGINS += [
+    "http://3.94.200.165",
+    "https://3.94.200.165",
+]
+
+CSRF_TRUSTED_ORIGINS += [
+    "http://3.94.200.165",
+    "https://3.94.200.165",
+]
 
 
